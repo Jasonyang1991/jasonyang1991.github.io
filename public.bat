@@ -1,0 +1,1 @@
+hugo --theme=hugo-tranquilpeak-theme --baseUrl="https://jasonyang1991.github.io/"

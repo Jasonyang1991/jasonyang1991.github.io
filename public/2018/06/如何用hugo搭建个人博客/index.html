@@ -1,0 +1,894 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.42.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>如何用Hugo搭建个人博客</title>
+    <meta name="author" content="Jiesheng Yang">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://jasonyang1991.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="如何用Hugo搭建个人博客">
+    <meta property="og:url" content="/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+    <meta property="og:site_name" content="Jiesheng&#39;s blog">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Jiesheng&#39;s blog">
+    <meta name="twitter:description" content="">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=640">
+    
+
+    
+      <meta property="og:image" content="https://jasonyang1991.github.io/img/%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+    
+    
+      <meta property="og:image" content="https://jasonyang1991.github.io/img/co15060Z21146-2.jpg">
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://jasonyang1991.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', '121409765', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jasonyang1991.github.io/">Jiesheng&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jasonyang1991.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jasonyang1991.github.io/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jiesheng Yang</h4>
+        
+          <h5 class="sidebar-profile-bio">Zurzeit befinde ich mich im 8. Semester des Diplomstudiengangs Bauingenieurwesen mit der Studienrichtung Computional Engineering an der TU Dresden</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jasonyang1991" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jasonyang1991.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('/img/co15060Z21146-2.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      如何用Hugo搭建个人博客
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-06-25T14:46:43&#43;02:00">
+        
+  June 25, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jasonyang1991.github.io/categories/skills">Skills</a>
+    
+  
+
+  </div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p></p>
+
+<p>开山第一篇，讲讲如何用Hugo+GitHub+Netlify搭建一个闷骚的个人博客。
+三者的和谐紧密友好关系如下图所示：</p>
+
+<p><img src="https://jasonyang1991.github.io/img/如何建立博客的流程图.png" alt="个人博客是如何运行的" /></p>
+
+<p>概述：Hugo建立的静态页面会放在 <code>Public</code> 目录下，然后将静态页面上传到GitHub中，所有博客的信息就已经在网络中了。最后通过Netlify托管静态网页,你就可以有自己的博客了。</p>
+
+<hr />
+
+<h1 id="table-of-contents">Table of Contents</h1><nav id="TableOfContents">
+<ul>
+<li><a href="#用hugo生成静态网页">用Hugo生成静态网页</a>
+<ul>
+<li><a href="#背景介绍">背景介绍</a>
+<ul>
+<li><a href="#什么是hugo">什么是Hugo？</a></li>
+<li><a href="#静态页面又是什么">静态页面又是什么？</a></li>
+</ul></li>
+<li><a href="#hugo配置和安装">Hugo配置和安装</a></li>
+</ul></li>
+<li><a href="#上传github">上传GitHub</a></li>
+<li><a href="#用netlify托管">用Netlify托管</a></li>
+<li><a href="#启用个人域名">启用个人域名</a></li>
+<li><a href="#update">update</a></li>
+</ul>
+</nav>
+
+<h1 id="用hugo生成静态网页">用Hugo生成静态网页</h1>
+
+<h2 id="背景介绍">背景介绍</h2>
+
+<ul>
+<li><h3 id="什么是hugo">什么是Hugo？</h3>
+
+<p>Hugo是一个通用的网络框架，可以用来生成静态页面。</p></li>
+
+<li><h3 id="静态页面又是什么">静态页面又是什么？</h3>
+
+<p>其实特别简单：
+动态页面就是每个访问网页的人看到的内容都不一样，比方说新浪微博。静态页面就是每个王文网页的人看到的内容都是相同的，比方说个人博客。</p></li>
+</ul>
+
+<h2 id="hugo配置和安装">Hugo配置和安装</h2>
+
+<ol>
+<li><p>在电脑上建立一个 <code>Hugo</code> 文件夹用来存放博客内容</p></li>
+
+<li><p>建立 <code>Hugo/bin</code> 文件夹存放Hugo包</p></li>
+
+<li><p><a href="https://github.com/gohugoio/hugo/releases">下载对应的Hugo包</a></p></li>
+
+<li><p>将下载的压缩文件解压到 <code>Hugo/bin</code> 里(此时只有在这个文件夹中可以运行 <code>Hugo.exe</code> )</p></li>
+
+<li><p>在环境变量中加入 <code>Hugo路径</code> （目的是在所有地方都可以调用 <code>Hugo.exe</code> ）</p>
+
+<p>5.1. <code>Windows + E</code> 打开文件管理器</p>
+
+<p>5.2. <code>此电脑-鼠标右键-属性</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_11-18-22.png" alt="设置环境变量" /></p>
+
+<p>5.3. <code>高级系统设置-环境变量</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_14-23-07.png" alt="设置环境变量" /></p>
+
+<p>5.4. 选择 <code>Path-编辑</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_14-25-14.png" alt="设置环境变量" /></p>
+
+<p>5.5. 新建-浏览-选择 <code>2.</code> 中的 <code>bin</code> 文件夹</p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_14-27-52.png" alt="设置环境变量" /></p>
+
+<p>5.6. 打开命令窗口，输入</p>
+
+<p><code>echo %path%</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_14-42-17.png" alt="检查环境变量" /></p>
+
+<p>检查环境变量，如果这里显示了 <code>Hugo/bin</code> ，则说明环境变量添加成功。继续输入</p>
+
+<p><code>Hugo version</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_14-44-24.png" alt="检查环境变量" /></p>
+
+<p>查看版本信息，可以看到我的Hugo版本是0.42.1（后面会用到）</p></li>
+
+<li><p>在 <code>Hugo</code> 文件夹中打开命令窗口，并输入</p>
+
+<p><code>hugo new site mysite</code></p>
+
+<p>建立一个新的网页（ <code>mysite</code> 这里可以替换成何你喜欢的名字）</p>
+
+<p><code>Hugo</code> 目录中会生成一个新文件夹，这就是存放网页的地方</p>
+
+<ul>
+<li><code>archetypes</code>: 储存markdown的模板文件 <code>.md</code></li>
+<li><code>content</code>: 储存网站的目录，文章等文字内容</li>
+<li><code>data</code>: 储存模板调用的数据文件</li>
+<li><code>layouts</code>: <code>HTML</code> 模板框架</li>
+<li><code>static</code>: 储存图像等文件</li>
+<li><code>themes</code>: 主题模板</li>
+<li><code>config.toml</code>: 网页的配置文件</li>
+</ul></li>
+
+<li><p>使用主题</p>
+
+<p>在<a href="https://themes.gohugo.io/">官方Themes</a>上，可以找到很多中意的主题，下载后放入 <code>Hugo/themes</code></p></li>
+
+<li><p>Hugo配置文件</p>
+
+<p>每个下载的主题包里都有一个 <code>exampleSite</code> ，可以直接copy里面的 <code>config.toml</code> 到 <code>Hugo</code> 目录下，然后打开进行配置（推荐使用Atom）</p></li>
+
+<li><p>第一篇Blog</p>
+
+<p>在 <code>Hugo/mysite</code> 目录下打开命令，输如</p>
+
+<p><code>Hugo new xxx.md</code></p>
+
+<p>新生成的 <code>xxx.md</code> 会自动存放在content目录中。打开 <code>xxx.md</code> 可以看见 <code>draft: true</code> ,默认的新生成文件为草稿。默认生成设置可以在 <code>archetypes/default.md</code> 中更改。</p>
+
+<p>此时在命令栏中输入</p>
+
+<p><code>Hugo server -D</code></p>
+
+<p>可以将包括草稿在内所有文档生成静态网页</p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-26_21-02-22.png" alt="Hugo server" /></p>
+
+<p>新生成的页面会存放在提示的地址中，例如</p>
+
+<p><code>localhost：6511</code></p>
+
+<p>将这个地址复制到浏览器中即可预览生成的静态网页效果</p></li>
+
+<li><p>生成 <code>Public</code> 文件夹</p>
+
+<p><code>hugo --theme=hugo-xxxxx-theme --baseUrl=&quot;https://author.github.io/&quot;</code></p>
+
+<p>可以保存为 <code>public.bat</code> 文件，比较方便省事。</p></li>
+</ol>
+
+<h1 id="上传github">上传GitHub</h1>
+
+<ol>
+<li><p>首先你得有一个Git账号</p></li>
+
+<li><p>在GitHub创建名为 <code>your_username.github.io</code> 的仓库</p></li>
+
+<li><p>初次运行Git需要设置用户名等， 在Windows中打开Git Bash</p>
+
+<pre><code>git config --global user.name author  #将用户名设为author
+git config --global user.email author@gmail.com  #将用户邮箱设为author@gpmail.com
+</code></pre></li>
+
+<li><p>设置 <code>SSH Key</code></p>
+
+<ul>
+<li>首先检查是否已生成密钥 <code>cd ~/.ssh</code> ，如果返回的 <code>ls</code> 有3个文件,则密钥已经生成</li>
+<li>如果没有密钥，则通过
+<code>$ ssh-keygen -t rsa -C &quot;author@gpmail.com&quot;</code>
+生成，生成过程需要按三次 <code>Enter</code> 。在用户目录 <code>C:\Users\yangj\.ssh</code> 中用Notepad++打开 <code>SSH Key</code> 的公匙 <code>id_rsa.pub</code></li>
+<li>复制文件中的 <code>key</code>，粘贴到GitHub网站 <code>Account Settings</code> 中的 <code>SSH keys</code> ，<code>Add SSH key</code> 中
+<img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_23-23-12.png" alt="git SSH" />
+<img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_23-26-38.png" alt="git SSH" /></li>
+</ul></li>
+
+<li><p>在生成的Public文件夹中建立本地仓库，鼠标右键打开Git Bash</p>
+
+<pre><code>git init
+git add -A
+git commit -m &quot;first commit&quot;
+git remote add origin git@github.com:author/author.github.io.git
+git push -u origin master
+</code></pre></li>
+
+<li><p>以后每次更新的时候只用输入</p>
+
+<pre><code>git add -A
+git commit -m &quot;备注信息&quot;
+git push -u orgin master
+</code></pre>
+
+<p>或者直接用Sourcetree</p></li>
+</ol>
+
+<h1 id="用netlify托管">用Netlify托管</h1>
+
+<p>直接将GitHub的网站仓库托管给<a href="https://www.netlify.com/">Netlify</a>，可以减少很多繁琐的步骤。</p>
+
+<ol>
+<li><p>在 <code>Public</code> 目录下建立 <code>netlify.toml</code> 文件，注意修改Hugo的版本信息</p>
+
+<pre><code>[build]
+publish = &quot;public&quot;
+command = &quot;hugo&quot;
+
+[context.production.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_ENV = &quot;production&quot;
+HUGO_ENABLEGITINFO = &quot;true&quot;
+
+[context.split1]
+command = &quot;hugo --enableGitInfo&quot;
+
+[context.split1.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_ENV = &quot;production&quot;
+
+[context.deploy-preview]
+command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+
+[context.deploy-preview.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+
+[context.branch-deploy]
+command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+
+[context.branch-deploy.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = &quot;true&quot;
+</code></pre></li>
+
+<li><p><a href="https://app.netlify.com/signup?_ga=2.35716899.2095972086.1530055212-706996381.1529837894">用GitHub登录Netlify</a></p></li>
+
+<li><p>右上角 <code>New site from Git</code> 添加网站</p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_01-25-20.png" alt="添加网站" /></p></li>
+
+<li><p>选择GitHub</p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_01-35-55.png" alt="选择GitHub" /></p></li>
+
+<li><p>给授权Netlify</p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_01-36-46.png" alt="授权给Netlify" /></p></li>
+
+<li><p>选择网站仓库然后点击 <code>Deploy site</code> ，喝一杯咖啡，你已经可以通过Netlify提供的默认网址查看自己的网页了。</p>
+
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">官方指引Host on Netlify</a></p></li>
+</ol>
+
+<h1 id="启用个人域名">启用个人域名</h1>
+
+<ol>
+<li><p>在<a href="https://www.namecheap.com/?gclid=CjwKCAjwyMfZBRAXEiwA-R3gM6Ao2dqVo2ZoiZyJTQXrph3FuFX2RcDkkM_b1M-5mCZaCZAcKAPjfRoCLLEQAvD_BwE">Neamcheap</a>上搜索个人域名，然后选择购买</p></li>
+
+<li><p>在Netlify的 <code>Domain management</code> 中点击 <code>Add Domain alias</code></p>
+
+<p><img src="https://jasonyang1991.github.io/img/Snipaste_2018-06-27_01-49-07.png" alt="授权给Netlify" /></p></li>
+
+<li><p>输入刚才购买的域名</p></li>
+</ol>
+
+<h1 id="update">update</h1>
+
+<p>Netlify总是出问题，后来得知如果用Netlify创建页面的话，就不用执行可以产生 <code>Public/</code> 的那个命令，而且需要上传整个文件夹 <code>Hugo/mysite</code> 。但是问题又出现了，我无法上传themes下面我正在使用的主题子文件夹。能用的方法都试了一遍，对Netlify留下两个字：爱过。</p>
+
+<p><strong>干脆直接用GitHub和Namecheap自定义域名</strong></p>
+
+<ul>
+<li><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">官方教程</a></li>
+<li><a href="http://alexyxwang.me/2017/08/24/Hexo-Github-Namecheap-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">在Namecheap上为Github设置DNS汉语教程</a>参考</li>
+<li>GitHub平台不支持Namecheap提供的 <code>SSL</code> ，但是已经购买的同学可以联系Namecheap Team退款。</li>
+<li><a href="https://www.cloudflare.com/">CloudFlare</a>是可以提供免费 <code>SSL</code> 的，而且GitHub平台可以支持CloudFlare的 <code>SSL</code> 。</li>
+<li>为什么一直盯着 <code>SSL</code> 不放手呢，因为只有开启了 <code>SSL</code> 服务，才可以使用 <code>https</code> 链接。</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jasonyang1991.github.io/tags/hugo/">Hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://jasonyang1991.github.io/tags/github/">GitHub</a>
+
+  <a class="tag tag--primary tag--small" href="https://jasonyang1991.github.io/tags/netlify/">Netlify</a>
+
+  <a class="tag tag--primary tag--small" href="https://jasonyang1991.github.io/tags/neamcheap/">Neamcheap</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" data-tooltip="Hugo操作指南">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Jiesheng Yang. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" data-tooltip="Hugo操作指南">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#table-of-contents">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjasonyang1991.github.io%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8hugo%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjasonyang1991.github.io%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8hugo%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjasonyang1991.github.io%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8hugo%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jiesheng Yang</h4>
+    
+      <div id="about-card-bio">Zurzeit befinde ich mich im 8. Semester des Diplomstudiengangs Bauingenieurwesen mit der Studienrichtung Computional Engineering an der TU Dresden</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Looking for a dissertation now
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Germany
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/">
+                <h3 class="media-heading">Hugo操作指南</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这篇Bolg将记录Hugo使用过程中的一些心得和技巧</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+                <h3 class="media-heading">如何用Hugo搭建个人博客</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         2 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://jasonyang1991.github.io/images/20130923_191551.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jasonyang1991.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jasonyang1991.github.io\/2018\/06\/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/';
+          
+            this.page.identifier = '\/2018\/06\/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
