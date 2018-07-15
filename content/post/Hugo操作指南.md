@@ -20,6 +20,10 @@ metaAlignment: center
 # Hugo Tutorial
 可以参考YouTube上[Giraffe Academy](https://www.youtube.com/channel/UCvmINlrza7JHB1zkIOuXEbw/playlists)的视频
 
+# 在主页显示文章简介
+
+`<!--more-->` 之前的文字都会被当作简介显示在主页中
+
 # 插入目录
 
 `<!-- toc -->`
