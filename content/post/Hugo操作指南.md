@@ -39,3 +39,15 @@ metaAlignment: center
 * 插入网络图片：
 
       `![图片备注](/https://avatars2.githubusercontent.com/u/3265208?v=3&s=100 "GitHub,Social Coding)`
+
+# 文字
+
+* 文字连接网页
+
+`[下载对应的Hugo包](https://github.com/gohugoio/hugo/releases)`
+
+# 关于主题
+
+* 博客所使用的主题是[`hugo-tranquilpeak-theme`](https://github.com/kakawait/hugo-tranquilpeak-theme)
+
+* 对应的[Documentation](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#writing-posts)写的非常用心
