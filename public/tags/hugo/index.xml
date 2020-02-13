@@ -1,34 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Jiesheng&#39;s blog</title>
-    <link>https://jasonyang1991.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on Jiesheng&#39;s blog</description>
+    <title>Hugo on Jiesheng Yang</title>
+    <link>https://jiesheng.space/tags/hugo/</link>
+    <description>Recent content in Hugo on Jiesheng Yang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Jun 2018 12:57:59 +0200</lastBuildDate>
     
-	<atom:link href="https://jasonyang1991.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jiesheng.space/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo操作指南</title>
-      <link>https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
+      <title>Hugo 操作指南</title>
+      <link>https://jiesheng.space/2018/06/hugo-%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
       <pubDate>Wed, 27 Jun 2018 12:57:59 +0200</pubDate>
       
-      <guid>https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</guid>
-      <description>&lt;p&gt;这篇Bolg将记录Hugo使用过程中的一些心得和技巧&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://jiesheng.space/2018/06/hugo-%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;这篇 Bolg 将记录 Hugo 使用过程中的一些心得和技巧&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>如何用Hugo搭建个人博客</title>
-      <link>https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <title>如何用 Hugo 搭建个人博客</title>
+      <link>https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Mon, 25 Jun 2018 14:46:43 +0200</pubDate>
       
-      <guid>https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;Blog 的第一篇，记录一下如何用 Hugo + GitHub + Netlify 搭建个人博客。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.64.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Jiesheng Yang">
+<meta name="keywords" content="">
+<meta name="description" content="Blog 的第一篇，记录一下如何用 Hugo &#43; GitHub &#43; Netlify 搭建个人博客。">
+
+
+<meta property="og:description" content="Blog 的第一篇，记录一下如何用 Hugo &#43; GitHub &#43; Netlify 搭建个人博客。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用 Hugo 搭建个人博客">
+<meta name="twitter:title" content="如何用 Hugo 搭建个人博客">
+<meta property="og:url" content="https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+<meta property="twitter:url" content="https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+<meta property="og:site_name" content="Jiesheng Yang">
+<meta property="og:description" content="Blog 的第一篇，记录一下如何用 Hugo &#43; GitHub &#43; Netlify 搭建个人博客。">
+<meta name="twitter:description" content="Blog 的第一篇，记录一下如何用 Hugo &#43; GitHub &#43; Netlify 搭建个人博客。">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-06-25T14:46:43">
+  
+  
+    <meta property="article:modified_time" content="2018-06-25T14:46:43">
+  
+  
+  
+    
+      <meta property="article:section" content="Skills">
+    
+  
+  
+    
+      <meta property="article:tag" content="Hugo">
+    
+      <meta property="article:tag" content="GitHub">
+    
+      <meta property="article:tag" content="Netlify">
+    
+      <meta property="article:tag" content="Neamcheap">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://jiesheng.space/img/hugo-logo.png">
+  <meta property="twitter:image" content="https://jiesheng.space/img/hugo-logo.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=640">
+
+
+    <title>如何用 Hugo 搭建个人博客</title>
+
+    <link rel="icon" href="https://jiesheng.space/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://jiesheng.space/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', '121409765', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jiesheng.space/">Jiesheng Yang</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jiesheng.space/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jiesheng.space/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Jiesheng Yang</h4>
+        
+          <h5 class="sidebar-profile-bio">Stop Wishing Start Doing</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jiesheng.space/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jiesheng.space/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jiesheng.space/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jiesheng.space/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jiesheng.space/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jasonyang1991" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      如何用 Hugo 搭建个人博客
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-06-25T14:46:43&#43;02:00">
+        
+  June 25, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jiesheng.space/categories/skills">Skills</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Blog 的第一篇，记录一下如何用 Hugo + GitHub + Netlify 搭建个人博客。</p>
+<p>三者的和谐紧密友好关系如下图所示：
+<img src="https://jiesheng.space/img/%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE11.png" alt="个人博客是如何运行的">
+概述：Hugo 建立的静态页面会放在本地 Public 目录下，然后利用 GitHub 建立一个 Blog 的库上传页面，所有博客的信息就出现在网络中了。最后利用 Netlify 托管静态网页，就可以有自己的博客了。</p>
+<hr>
+<!-- raw HTML omitted -->
+<h1 id="用hugo生成静态网页-">用Hugo生成静态网页</h1>
+<h2 id="背景介绍-">背景介绍</h2>
+<ul>
+<li>
+<h3 id="什么是hugo-">什么是Hugo？</h3>
+</li>
+</ul>
+<p>Hugo是一个基于go的通用网络框架，可以用来生成静态页面。</p>
+<ul>
+<li>
+<h3 id="什么是静态页面-">什么是静态页面？</h3>
+其实特别简单：
+如果每个访问网页的人看到的内容都不一样，那这就是一个<strong>动态页面</strong>，比如新浪微博。如果每个访问网页的人看到的内容都是相同的，那这就是一个<strong>静态页面</strong>，比如个人博客。</li>
+</ul>
+<h2 id="hugo配置和安装-">Hugo配置和安装</h2>
+<ol>
+<li>
+<p>在电脑上建立一个 Hugo 文件夹用来存放博客内容</p>
+</li>
+<li>
+<p>建立 Hugo/ bin 文件夹存放 Hugo 包</p>
+</li>
+<li>
+<p><a href="https://github.com/gohugoio/hugo/releases">下载对应的Hugo包</a></p>
+</li>
+<li>
+<p>将下载的压缩文件解压到 Hugo/ bin 里(此时只有在这个文件夹中可以运行 Hugo.exe)</p>
+</li>
+<li>
+<p>在环境变量中加入 Hugo 路径（目的是在所有地方都可以调用 Hugo.exe ）</p>
+</li>
+<li>
+<p>打开命令窗口，输入
+<code>echo %path%</code></p>
+<pre><code>C:\Windows\system32;
+C:\Windows;
+C:\Windows\System32\Wbem;
+C:\Windows\System32\WindowsPowerShell\v1.0\;
+C:\Users\Jiesheng Yang\Dropbox\Hugo\bin;
+</code></pre><p>检查环境变量，如果这里显示了 Hugo/bin，则说明环境变量添加成功。继续输入
+<code>Hugo version</code></p>
+<pre><code>Hugo Static Site Generator v0.42.1
+</code></pre><p>查看版本信息，可以看到我的 Hugo 版本是0. 42. 1（后面会用到）</p>
+</li>
+<li>
+<p>在 Hugo 文件夹中打开命令窗口（建议使用 Cmder），并输入
+<code>hugo new site mysite</code>
+建立一个新的网页（ mysite 可以替换成何名字）
+Hugo 目录中会生成一个 mysite 件夹，其结构如下:</p>
+<pre><code>|-- mysite
+  ||-- archetypes # 储存 markdown 的模板文件
+  ||-- content # 储存网站的目录，文章等文字内容
+  ||-- data: # 储存模板调用的数据文件
+  ||-- layouts # HTML 模板框架
+  ||-- static # 储存图像等文件
+  ||-- themes # 主题模板
+  ||-- config.toml # 网页的配置文件
+</code></pre></li>
+<li>
+<p>使用主题
+在<a href="https://themes.gohugo.io/">官方Themes</a>上，可以找到很多中意的主题，下载后放入 Hugo/themes</p>
+</li>
+<li>
+<p>Hugo配置文件
+每个下载的主题包里都有 exampleSite，可以直接 copy 里面的 config.toml 到 mysite 目录下，然后修改config.toml进行配置（推荐使用 Atom 或者 Visual Studio）
+注意填写  baseURL 的时候，需要填写自己的域名</p>
+</li>
+<li>
+<p>第一篇Blog
+在 Hugo/mysite 目录下打开命令，输如
+<code>Hugo new xxx.md</code>
+新生成的 xxx.md 会自动存放在content目录中。打开 xxx.md 可以看见 draft: true， 默认的新生成文件为草稿。默认生成设置可以在  archetypes/default.md 中更改。
+此时在命令栏中输入
+<code>Hugo server -D</code>
+可以将包括草稿在内所有文档生成静态网页</p>
+</li>
+<li>
+<pre><code> Building sites …
+                    | EN-US
+ -------------------+--------
+   Pages            |    28
+   Paginator pages  |     0
+   Non-page files   |     0
+   Static files     |    41
+   Processed images |     0
+   Aliases          |     9
+   Sitemaps         |     1
+   Cleaned          |     0
+     
+ Built in 158 ms
+ Watching for changes in C:\Users\Jiesheng Yang\Dropbox\Hugo\Blog\{archetypes,content,data,layouts,static,themes}
+ Watching for config changes in C:\Users\Jiesheng Yang\Dropbox\Hugo\Blog\config.toml
+ Environment: &quot;development&quot;
+ Serving pages from memory
+ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+ Press Ctrl+C to stop
+</code></pre><p>新生成的页面会存放在提示的地址中，例如
+<code>localhost：6511</code>
+将这个地址复制到浏览器中即可预览生成的静态网页效果</p>
+</li>
+<li>
+<p>生成 Public 文件夹
+<code>hugo --theme=hugo-xxxxx-theme --baseUrl=&quot;https://author.github.io/&quot;</code>
+可以保存为 public.bat 文件，比较方便省事。</p>
+</li>
+</ol>
+<h1 id="上传-github-">上传 GitHub</h1>
+<ol>
+<li>
+<p>首先你得有一个 Git 账号</p>
+</li>
+<li>
+<p>在GitHub创建名为  your_username.github.io 的仓库</p>
+</li>
+<li>
+<p>初次运行 Git 需要设置用户名等， 在 Windows 中打开 Git Bash</p>
+<pre><code>git config --global user.name author  # 将用户名设为 author
+git config --global user.email author@gmail.com  # 将用户邮箱设为 author@gpmail.com
+</code></pre></li>
+<li>
+<p>设置 SSH Key</p>
+<ul>
+<li>首先检查是否已生成密钥  cd ~/.ssh ，如果返回的  ls 有3个文件,则密钥已经生成</li>
+<li>如果没有密钥，则通过
+<code>ssh-keygen -t rsa -C &quot;author@gmail.com&quot;</code>
+生成，生成过程需要按三次 Enter。在用户目录 C:\Users\yangj.ssh 中用 Notepad++打开 SSH Key 的公匙 id_rsa.pub</li>
+<li>复制文件中的 key，粘贴到 GitHub 网站  Account Settings 中的 SSH keys ，Add SSH key 中
+<img src="https://jiesheng.space/img/Snipaste_2018-06-27_23-23-12.png" alt="git SSH">
+<img src="https://jiesheng.space/img/Snipaste_2018-06-27_23-26-38.png" alt="git SSH"></li>
+</ul>
+</li>
+<li>
+<p>在生成的 Public 文件夹中建立本地仓库，鼠标右键打开 Git Bash</p>
+<pre><code>git init
+git add -A
+git commit -m &quot;first commit&quot;
+git remote add origin git@github.com:author/author.github.io.git
+git push -u origin master
+</code></pre></li>
+<li>
+<p>以后每次更新的时候只用输入</p>
+<pre><code>git add -A
+git commit -m &quot;备注信息&quot;
+git push -u orgin master
+</code></pre><p>或者直接用Sourcetree</p>
+</li>
+</ol>
+<h1 id="用-netlify-托管-">用 Netlify 托管</h1>
+<p>直接将 GitHub 的网站仓库托管给 <a href="https://www.netlify.com/">Netlify</a>，可以减少很多繁琐的步骤。</p>
+<ol>
+<li>
+<p>在 Public 目录下建立 netlify.toml 文件，注意修改Hugo的版本信息</p>
+<pre><code>[build]
+publish = &quot;public&quot;
+command = &quot;hugo&quot;
+
+[context.production.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_ENV = &quot;production&quot;
+HUGO_ENABLEGITINFO = &quot;true&quot;
+
+[context.split1]
+command = &quot;hugo --enableGitInfo&quot;
+
+[context.split1.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_ENV = &quot;production&quot;
+
+[context.deploy-preview]
+command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+
+[context.deploy-preview.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+
+[context.branch-deploy]
+command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+
+[context.branch-deploy.environment]
+HUGO_VERSION = &quot;0.42.1&quot;
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = &quot;true&quot;
+</code></pre></li>
+<li>
+<p><a href="https://app.netlify.com/signup?_ga=2.35716899.2095972086.1530055212-706996381.1529837894">用 GitHub 登录Netlify</a></p>
+</li>
+<li>
+<p>右上角 New site from Git 添加网站</p>
+<p><img src="https://jiesheng.space/img/Snipaste_2018-06-27_01-25-20.png" alt="添加网站">{:height=&quot;10%&rdquo; width=&quot;10%&quot;}</p>
+</li>
+<li>
+<p>选择 GitHub</p>
+<p><img src="https://jiesheng.space/img/Snipaste_2018-06-27_01-35-55.png" alt="选择GitHub"></p>
+</li>
+<li>
+<p>给授权 Netlify</p>
+<p><img src="https://jiesheng.space/img/Snipaste_2018-06-27_01-36-46.png" alt="授权给Netlify"></p>
+</li>
+<li>
+<p>选择网站仓库然后点击 Deploy site，喝一杯咖啡，你已经可以通过Netlify提供的默认网址查看自己的网页了。</p>
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">官方指引Host on Netlify</a></p>
+</li>
+</ol>
+<h1 id="启用个人域名-">启用个人域名</h1>
+<ol>
+<li>
+<p>在<a href="https://www.namecheap.com/?gclid=CjwKCAjwyMfZBRAXEiwA-R3gM6Ao2dqVo2ZoiZyJTQXrph3FuFX2RcDkkM_b1M-5mCZaCZAcKAPjfRoCLLEQAvD_BwE"> Neamcheap </a>上搜索个人域名，然后选择购买</p>
+</li>
+<li>
+<p>在 Netlify 的 Domain management 中点击 Add Domain alias</p>
+<p><img src="https://jiesheng.space/img/Snipaste_2018-06-27_01-49-07.png" alt="授权给Netlify"></p>
+</li>
+<li>
+<p>输入刚才购买的域名</p>
+</li>
+</ol>
+<h1 id="添加discus评论系统-">添加Discus评论系统</h1>
+<ol>
+<li>
+<p>在<a href="https://disqus.com/"> Discus </a>注册账号</p>
+</li>
+<li>
+<p>点击 GET START 然后选择 I want to install Disqus on my site</p>
+</li>
+<li>
+<p>设置网站名称等，然后 Create Site</p>
+</li>
+<li>
+<p>选择 Basic 然后 Subscribe now</p>
+</li>
+<li>
+<p>选择最底部的 I did&rsquo;t see my platform &hellip;</p>
+</li>
+<li>
+<p>选择最底部的 Configure</p>
+</li>
+<li>
+<p>设置网站地址，评论基本条款等</p>
+<p>![Disqus](/img/Disqus setting.gif)</p>
+</li>
+<li>
+<p>在 Setting 中找到 Shortname 并且把它填写到 config.toml 的 disqusShortname</p>
+</li>
+</ol>
+<h1 id="update-">update</h1>
+<p>Netlify 总是出问题: 开启 SSL 后整个网页的排版变得一团混乱，正在想办法解决。</p>
+<p>好的，问题终于解决了，是 config.toml 中的 baseURL 设置问题，这里应该填写自己网页的域名</p>
+<p><code>baseURL = &quot;https://jiesheng.space&quot;</code></p>
+<p>而不是 GitHub 的 URL 。</p>
+<p><strong>也可以跳过 Netlify 直接用 GitHub 和 Namecheap 自定义域名</strong></p>
+<ul>
+<li><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">官方教程</a></li>
+<li><a href="http://alexyxwang.me/2017/08/24/Hexo-Github-Namecheap-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">在 Namecheap 上为 Github 设置 DNS 汉语教程</a>参考</li>
+<li>GitHub 平台不支持 Namecheap提供的 SSL ，但是已经购买的同学可以联系 Namecheap Team 退款。</li>
+<li><a href="https://www.cloudflare.com/">CloudFlare </a>是可以提供免费 SSL 的，而且 GitHub 平台可以支持 CloudFlare 的 SSL 。</li>
+<li>为什么一直盯着 SSL 不放手呢，因为只有开启了 SSL 服务，才可以使用 https 链接。</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jiesheng.space/tags/hugo/">Hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://jiesheng.space/tags/github/">GitHub</a>
+
+  <a class="tag tag--primary tag--small" href="https://jiesheng.space/tags/netlify/">Netlify</a>
+
+  <a class="tag tag--primary tag--small" href="https://jiesheng.space/tags/neamcheap/">Neamcheap</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jiesheng.space/2018/06/hugo-%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" data-tooltip="Hugo 操作指南">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Jiesheng Yang. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jiesheng.space/2018/06/hugo-%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/" data-tooltip="Hugo 操作指南">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjiesheng.space%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8-hugo-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjiesheng.space%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8-hugo-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjiesheng.space%2F2018%2F06%2F%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8-hugo-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/4a3e4639b270a906e84611a1ea49d656?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Jiesheng Yang</h4>
+    
+      <div id="about-card-bio">Stop Wishing Start Doing</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Looking for a job now
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Germany
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jiesheng.space/img/background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jiesheng.space/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jiesheng.space\/2018\/06\/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/';
+          
+            this.page.identifier = '\/2018\/06\/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'blog-fgqdvm5hd1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

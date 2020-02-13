@@ -1,73 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jasonyang1991.github.io/2018/06/hugo%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://jiesheng.space/categories/</loc>
     <lastmod>2018-06-27T12:57:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jasonyang1991.github.io/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/archives/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/tags/github/</loc>
-    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/tags/hugo/</loc>
+    <loc>https://jiesheng.space/tags/hugo/</loc>
     <lastmod>2018-06-27T12:57:59+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jasonyang1991.github.io/</loc>
+    <loc>https://jiesheng.space/2018/06/hugo-%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2018-06-27T12:57:59+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jasonyang1991.github.io/tags/neamcheap/</loc>
-    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/tags/netlify/</loc>
-    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jasonyang1991.github.io/post/</loc>
+    <loc>https://jiesheng.space/</loc>
     <lastmod>2018-06-27T12:57:59+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jasonyang1991.github.io/categories/skills/</loc>
+    <loc>https://jiesheng.space/post/</loc>
     <lastmod>2018-06-27T12:57:59+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jasonyang1991.github.io/tags/</loc>
+    <loc>https://jiesheng.space/categories/skills/</loc>
+    <lastmod>2018-06-27T12:57:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/tags/</loc>
+    <lastmod>2018-06-27T12:57:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/tags/github/</loc>
     <lastmod>2018-06-25T14:46:43+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/tags/neamcheap/</loc>
+    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/tags/netlify/</loc>
+    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/2018/06/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-06-25T14:46:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiesheng.space/archives/</loc>
   </url>
   
 </urlset>
