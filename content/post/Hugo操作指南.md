@@ -1,6 +1,6 @@
 ---
 title: "Hugo 操作指南"
-date: 2018-06-27T12:57:59+02:00
+date: 2020-02-13T12:57:59+02:00
 tags: ["Hugo"]
 categories: ["Skills"]
 draft: false
