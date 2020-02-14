@@ -300,8 +300,8 @@ C:\Windows\System32\WindowsPowerShell\v1.0\;
 C:\Users\Jiesheng Yang\Dropbox\Hugo\bin;
 </code></pre><p>检查环境变量，如果这里显示了 Hugo/bin，则说明环境变量添加成功。继续输入
 <code>Hugo version</code></p>
-<pre><code>Hugo Static Site Generator v0.42.1
-</code></pre><p>查看版本信息，可以看到我的 Hugo 版本是0. 42. 1（后面会用到）</p>
+<pre><code>Hugo Static Site Generator v0.64.1
+</code></pre><p>查看版本信息，可以看到我的 Hugo 版本是0. 64. 1（后面会用到）</p>
 </li>
 <li>
 <p>在 Hugo 文件夹中打开命令窗口（建议使用 Cmder），并输入
@@ -411,34 +411,34 @@ git push -u orgin master
 <p>直接将 GitHub 的网站仓库托管给 <a href="https://www.netlify.com/">Netlify</a>，可以减少很多繁琐的步骤。</p>
 <ol>
 <li>
-<p>在 Public 目录下建立 netlify.toml 文件，注意修改Hugo的版本信息</p>
+<p>在 mysite 根目录下建立 netlify.toml 文件，注意修改 Hugo 的版本信息</p>
 <pre><code>[build]
 publish = &quot;public&quot;
-command = &quot;hugo&quot;
+command = &quot;hugo --gc --minify&quot;
 
 [context.production.environment]
-HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_VERSION = &quot;0.64.1&quot;
 HUGO_ENV = &quot;production&quot;
 HUGO_ENABLEGITINFO = &quot;true&quot;
 
 [context.split1]
-command = &quot;hugo --enableGitInfo&quot;
+command = &quot;hugo --gc --minify --enableGitInfo&quot;
 
 [context.split1.environment]
-HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_VERSION = &quot;0.64.1&quot;
 HUGO_ENV = &quot;production&quot;
 
 [context.deploy-preview]
-command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+command = &quot;hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL&quot;
 
 [context.deploy-preview.environment]
-HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_VERSION = &quot;0.64.1&quot;
 
 [context.branch-deploy]
-command = &quot;hugo -b $DEPLOY_PRIME_URL&quot;
+command = &quot;hugo --gc --minify -b $DEPLOY_PRIME_URL&quot;
 
 [context.branch-deploy.environment]
-HUGO_VERSION = &quot;0.42.1&quot;
+HUGO_VERSION = &quot;0.64.1&quot;
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = &quot;true&quot;
